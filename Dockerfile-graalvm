@@ -1,5 +1,4 @@
-FROM oracle/graalvm-ce:20.3.0-java11
-
+FROM ghcr.io/graalvm/graalvm-ce:ol8-java17
 RUN gu install native-image
 
 RUN curl --location --output /usr/local/bin/aws-lambda-rie \

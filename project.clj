@@ -9,9 +9,9 @@
   :dependencies [[com.amazonaws/aws-lambda-java-core "1.2.1"]
                  [com.amazonaws/aws-lambda-java-runtime-interface-client "1.0.0"]
                  [medley "1.3.0"]
-                 [org.clojure/clojure "1.10.2-alpha4"] ; >= 1.10.2-alpha1 is needed to avoid org.graalvm.compiler.core.common.PermanentBailoutException: Frame states being merged are incompatible: unbalanced monitors - locked objects do not match
+                 [org.clojure/clojure "1.10.3"] ; >= 1.10.2-alpha1 is needed to avoid org.graalvm.compiler.core.common.PermanentBailoutException: Frame states being merged are incompatible: unbalanced monitors - locked objects do not match
                  [uswitch/lambada "0.1.2"]]
-  :managed-dependencies [[org.clojure/spec.alpha "0.2.187"]]
+  :managed-dependencies [[org.clojure/spec.alpha "0.3.218"]]
   :pedantic? :abort
 
   :target-path "target/%s"
@@ -27,6 +27,6 @@
   :profiles {:uberjar {:uberjar-name "hello-world.jar"
                        :aot :all
                        :omit-source true}
-             :dev {:dependencies [[lambdaisland/kaocha "1.0.732"]
-                                  [org.clojure/test.check "1.1.0"]]}
+             :dev {:dependencies [[lambdaisland/kaocha "1.63.998" :exclusions [expound org.clojure/tools.reader]]
+                                  [org.clojure/test.check "1.1.1"]]}
              :kaocha {}})
